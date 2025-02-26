@@ -1,0 +1,79 @@
+﻿@inherits LayoutComponentBase
+
+<div class="my-layout-container">
+    <!-- Заголовок -->
+    <header>
+        <h1>🌟 Добро пожаловать в MyLayout</h1>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="my-nav">
+        <NavLink href="/" class="nav-link">🏠 Главная</NavLink>
+        <NavLink href="/catalog" class="nav-link">📖 Каталог</NavLink>
+        <NavLink href="/contacts" class="nav-link">📞 Контакты</NavLink>
+    </nav>
+
+    <!-- Основное содержимое страницы -->
+    <main>
+        @Body
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2025 MyLayout. Все права защищены.</p>
+    </footer>
+</div>
+
+<style>
+    /* Основной контейнер */
+    .my-layout-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #f3f4f6;
+    }
+
+    /* Заголовок */
+    header {
+        background: #3B82F6;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Навигация */
+    .my-nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background: #2563EB;
+        padding: 10px;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+        .nav-link:hover {
+            background: #1E40AF;
+        }
+
+    /* Основное содержимое */
+    main {
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    /* Футер */
+    footer {
+        background: #F59E0B;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
