@@ -1,0 +1,13 @@
+﻿@namespace BlazorLab1.Shared
+
+<button @onclick="ShowMessage">Нажать</button>
+<p>@message</p>
+
+@code {
+    string message = "";
+
+    void ShowMessage()
+    {
+        message = "Кнопка нажата!";
+    }
+}

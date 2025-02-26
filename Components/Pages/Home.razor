@@ -1,0 +1,52 @@
+﻿@page "/"
+@inject NavigationManager NavManager
+<div class="landing-container">
+    <!-- Секция приветствия -->
+    <section class="hero">
+        <h2>Добро пожаловать в PetPal!</h2>
+        <p>Ваш надежный помощник в учете и заботе о домашних питомцах.</p>
+        <button class="cta-button" @onclick="NavigateToCatalog">Посмотреть каталог</button>
+    </section>
+
+    <!-- Секция преимуществ -->
+    <section class="features">
+        <div class="feature">
+            <img src="images/health.png" alt="Учет здоровья">
+            <h3>Учет здоровья</h3>
+            <p>Следите за прививками и медицинскими записями ваших питомцев.</p>
+        </div>
+        <div class="feature">
+            <img src="images/diet.png" alt="Питание">
+            <h3>Питание</h3>
+            <p>Рекомендации по кормлению и диетам для разных видов животных.</p>
+        </div>
+        <div class="feature">
+            <img src="images/activity.jpg" alt="Активность">
+            <h3>Активность</h3>
+            <p>Отслеживайте физическую активность и прогулки ваших любимцев.</p>
+        </div>
+    </section>
+
+    <!-- Секция отзывов -->
+    <section class="testimonials">
+        <h2>Отзывы наших пользователей</h2>
+        <div class="testimonial">
+            <p>"PetPal значительно упростил уход за моими питомцами. Теперь я не забываю о прививках и прогулках!"</p>
+            <span>- Анна, владелица собак</span>
+        </div>
+        <div class="testimonial">
+            <p>"Отличное приложение! Рекомендую всем, кто заботится о своих кошках."</p>
+            <span>- Иван, котовладелец</span>
+        </div>
+    </section>
+</div>
+
+@code {
+    private void NavigateToCatalog()
+    {
+        NavigationManager.NavigateTo("/catalog");
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+}

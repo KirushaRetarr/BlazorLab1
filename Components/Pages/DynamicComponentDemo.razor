@@ -1,0 +1,20 @@
+﻿<h3>Динамическое добавление компонентов</h3>
+
+<button @onclick="AddComponent">Добавить компонент</button>
+
+<div>
+    @foreach (var index in componentIndexes)
+    {
+        <p>Компонент @index</p>
+    }
+</div>
+
+@code {
+    private List<int> componentIndexes = new();
+    private int count = 1;
+
+    private void AddComponent()
+    {
+        componentIndexes.Add(count++);
+    }
+}

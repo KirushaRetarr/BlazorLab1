@@ -1,0 +1,43 @@
+﻿@page "/catalog"
+
+<h2 class="catalog-title">📖 Каталог товаров</h2>
+
+<table class="catalog-table">
+    <thead>
+        <tr>
+            <th>Фото</th>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Цена (₸)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in CatalogItems)
+        {
+            <tr>
+                <td><img src="@item.Image" alt="@item.Name"></td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price.ToString("N0") ₸</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<CatalogItem> CatalogItems = new()
+    {
+        new CatalogItem("Щетка для шерсти", "Помогает избавиться от лишней шерсти", "images/brush.webp", 3500),
+        new CatalogItem("Когтерез", "Для аккуратного ухода за когтями", "images/nail_clipper.webp", 2800),
+        new CatalogItem("Лежанка", "Мягкое место для сна", "images/bed.webp", 12000),
+        new CatalogItem("Игрушка-мышка", "Развлекательная игрушка для кошек", "images/mouse_toy.webp", 1500),
+        new CatalogItem("Автоматическая кормушка", "Дозирует корм по времени", "images/feeder.webp", 25000),
+        new CatalogItem("Наполнитель для туалета", "Гигиенический наполнитель", "images/litter.webp", 4000),
+        new CatalogItem("Миска для корма", "Нержавеющая сталь, нескользящее дно", "images/bowl.webp", 3000),
+        new CatalogItem("Поилка-фонтан", "Постоянный поток чистой воды", "images/water_fountain.webp", 14000),
+        new CatalogItem("Переноска", "Для безопасной перевозки питомца", "images/carrier.webp", 18000),
+        new CatalogItem("Домик-когтеточка", "Место для отдыха и заточки когтей", "images/scratcher.webp", 22000),
+    };
+
+    private record CatalogItem(string Name, string Description, string Image, int Price);
+}

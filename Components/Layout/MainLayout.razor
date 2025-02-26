@@ -1,0 +1,31 @@
+﻿@inherits LayoutComponentBase
+
+<div class="layout-container">
+    <!-- Шапка -->
+    <header>
+        <img src="images/logo.jpg" alt="PetPal Logo" class="logo">
+        <nav>
+            <NavLink href="/" class="nav-link">🏠 Главная</NavLink>
+            <NavLink href="/catalog" class="nav-link">📖 Каталог</NavLink>
+            <NavLink href="/contacts" class="nav-link">📞 Контакты</NavLink>
+            <NavLink href="/task" class="nav-link">👤 Задания по лабораторной</NavLink>
+            <NavLink href="/admin/dashboard" class="nav-link">🔧 Админ-панель</NavLink>
+        </nav>
+        <ThemeSwitcher />
+        <link rel="stylesheet" href="site.css">
+    </header>
+
+    <main>
+        @Body
+    </main>
+
+    <footer>
+        <p>© 2025 PetPal. Все права защищены.</p>
+    </footer>
+</div>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>

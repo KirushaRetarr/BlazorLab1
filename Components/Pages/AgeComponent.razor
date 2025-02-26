@@ -1,0 +1,12 @@
+﻿<h3>Возраст: @Age</h3>
+<button @onclick="IncreaseAge">Увеличить возраст</button>
+
+@code {
+    [Parameter]
+    public int Age { get; set; }
+
+    private void IncreaseAge()
+    {
+        Age++;
+    }
+}

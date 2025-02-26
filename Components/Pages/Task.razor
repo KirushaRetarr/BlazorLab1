@@ -1,0 +1,47 @@
+﻿@page "/task"
+
+<h3>Работы</h3>
+
+@inject NavigationManager NavManager
+
+@using BlazorLab1.Components
+@using BlazorLab1.Shared
+
+<Greeting Name="Кирилл" />
+
+<UserInput />
+
+<ClickButton />
+
+<AgeComponent Age="25" />
+
+<LifecycleComponent />
+
+<ParentComponent />
+
+<ProductList />
+
+<DynamicComponentDemo />
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<p>Выберите продукт:</p>
+
+<button @onclick="@NavigateToProduct1">Товар 1</button>
+<button @onclick="@NavigateToProduct2">Товар 2</button>
+
+@code {
+    private void NavigateToProduct1()
+    {
+        NavManager.NavigateTo("/product/1", forceLoad: true);
+    }
+
+    private void NavigateToProduct2()
+    {
+        NavManager.NavigateTo("/product/2", forceLoad: true);
+    }
+}

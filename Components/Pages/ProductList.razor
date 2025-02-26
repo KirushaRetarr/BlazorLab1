@@ -1,0 +1,25 @@
+﻿<h3>Список продуктов</h3>
+
+<input @bind="newProduct" placeholder="Введите продукт" />
+<button @onclick="AddProduct">Добавить</button>
+
+<ul>
+    @foreach (var product in products)
+    {
+        <li>@product</li>
+    }
+</ul>
+
+@code {
+    private string newProduct = "";
+    private List<string> products = new() { "Молоко", "Хлеб", "Яблоки" };
+
+    private void AddProduct()
+    {
+        if (!string.IsNullOrWhiteSpace(newProduct))
+        {
+            products.Add(newProduct);
+            newProduct = "";
+        }
+    }
+}

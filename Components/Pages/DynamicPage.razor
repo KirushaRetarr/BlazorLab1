@@ -1,0 +1,15 @@
+﻿@page "/dynamic"
+@rendermode InteractiveServer
+
+<h3>Динамическая страница</h3>
+<p>@message</p>
+<button @onclick="ChangeMessage">Изменить текст</button>
+
+@code {
+    private string message = "Исходный текст";
+
+    private void ChangeMessage()
+    {
+        message = "Текст изменен!";
+    }
+}
